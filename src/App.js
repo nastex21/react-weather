@@ -29,7 +29,6 @@ class App extends Component {
 
   testing() {
     let info = this.state.data.info;
-    console.log(info)
     return (
       <div>
        <City name={info.current_observation.display_location.full} />
