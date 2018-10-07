@@ -16,7 +16,6 @@ export default class Condition extends Component {
 
     conditionCheck(){
         let data = this.props.data;
-        console.log(data);
         var d = new Date();
         var n = d.getHours();
         var condition = data.weather;
@@ -97,7 +96,7 @@ export default class Condition extends Component {
                     }
 
         
-            //CLEAR CONDITIONS
+        //CLEAR CONDITIONS
             if (clear_condition !== null) {
                 if (n >= 5 && n <= 7) {
                     background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646022/Weather/sunrise-182302.jpg)";
@@ -120,8 +119,8 @@ export default class Condition extends Component {
                 }
             }
 
-            //if condition is an empty string
-            if (condition == "") {
+        //if condition is an empty string
+            if (condition === "") {
                 if (n >= 5 && n <= 7) {
                     
                         background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646022/Weather/sunrise-182302.jpg)";
@@ -153,7 +152,6 @@ export default class Condition extends Component {
     
 
     render(){
-        console.log(this.state.src);
         return (
             <img id="icon" src={this.state.src} alt="icon images for weather condition" /> 
         )
