@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import City from "./City";
 import InfoBox from "./InfoBox";
+import WindInfo from "./WindInfo"
 
 class App extends Component {
   constructor(props) {
@@ -30,10 +31,11 @@ class App extends Component {
   testing() {
     let info = this.state.data.info;
     return (
-      <div>
+      <>
        <City name={info.current_observation.display_location.full} />
        <InfoBox data_obv={info.current_observation} />
-      </div>
+       <WindInfo data_obv={info.current_observation} />
+      </>
     )
   }
   
@@ -41,7 +43,7 @@ class App extends Component {
   render() {
     let info = this.state.data.info;
     return (
-      <div>
+      <div className="box">
         {info !== undefined ? this.testing() : null}
       </div>
       
