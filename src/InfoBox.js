@@ -6,11 +6,12 @@ export default class InfoBox extends Component {
     
 
     render(){
+        console.log(this.props.metricState)
         return(
             <div className="infoBox">
             <div className="info">
                  <Condition data={this.props.data_obv}/>
-                 <Infotext data={this.props.data_obv} />
+                 <Infotext data={this.props.data_obv} metricState={this.props.metricState} />
              </div>
             </div>
         )

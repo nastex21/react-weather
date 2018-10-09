@@ -5,7 +5,6 @@ export default class WindInfo extends Component {
         super(props);
         this.state = {
             src: "blank.jpg",
-            adj: "",
             direction: "",
             speed: "",
             gust: "",
@@ -16,23 +15,17 @@ export default class WindInfo extends Component {
 
     componentDidMount(){
         let info = this.props.data_obv;
-        console.log(info);
         this.setState({
             direction: info.wind_dir,
-            adj: info.wind_string,
             speed: info.wind_mph,
             gust: info.wind_gust_mph,
             unit: "MPH"
         })
-        console.log("componentDidMount called again");
         this.windIcons();
     }
     
 
-    componentDidUpdate(prevProps){
-        console.log(prevProps);
-        console.log(this.props);
-        //let info = this.props.data_obv;
+    componentDidUpdate(prevProps){  
         if (this.props.metricState !== prevProps.metricState) {
             let info = this.props.data_obv;
             if(this.props.metricState){
@@ -98,8 +91,7 @@ export default class WindInfo extends Component {
                  <div className="variousInfo">
                     <img id="arrowIcons" src={this.state.src} alt="cardinal directions for wind" />
                     <p id="wind_direction">{this.state.direction}</p>
-                    <p id="wind_adjective">{this.state.adj}</p>        
-                    <p id="wind_speed">Wind: {Math.round(this.state.speed)} </p>
+                    <p id="wind_speed">Wind: {Math.round(this.state.speed)} {this.state.unit}</p>
                     <p id="wind_gust">Gust: {Math.round(this.state.gust)} {this.state.unit}</p>
                 </div>
             </div>
