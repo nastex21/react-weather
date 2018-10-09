@@ -5,23 +5,50 @@ export default class WindInfo extends Component {
         super(props);
         this.state = {
             src: "blank.jpg",
+            adj: "",
             direction: "",
-            mph: "",
-            gust: ""
+            speed: "",
+            gust: "",
+            unit: ""
         }
         this.windIcons = this.windIcons.bind(this);
-          }
+    }          
 
     componentDidMount(){
         let info = this.props.data_obv;
         console.log(info);
         this.setState({
             direction: info.wind_dir,
-            mph: info.wind_mph,
-            gust: info.wind_gust_mph
-
+            adj: info.wind_string,
+            speed: info.wind_mph,
+            gust: info.wind_gust_mph,
+            unit: "MPH"
         })
+        console.log("componentDidMount called again");
         this.windIcons();
+    }
+    
+
+    componentDidUpdate(prevProps){
+        console.log(prevProps);
+        console.log(this.props);
+        //let info = this.props.data_obv;
+        if (this.props.metricState !== prevProps.metricState) {
+            let info = this.props.data_obv;
+            if(this.props.metricState){
+                this.setState({
+                    speed: Math.round(info.wind_kph),
+                    gust: Math.round(info.wind_gust_kph),
+                    unit: "KPH"
+                });
+            } else {
+                this.setState({
+                    speed: info.wind_mph,
+                    gust: info.wind_gust_mph,
+                    unit: "MPH"
+                })
+            }
+          }
     }
 
     windIcons(){
@@ -65,13 +92,15 @@ export default class WindInfo extends Component {
     }
 
     render(){
+    
         return(
             <div className="windInfoBox">
                  <div className="variousInfo">
                     <img id="arrowIcons" src={this.state.src} alt="cardinal directions for wind" />
                     <p id="wind_direction">{this.state.direction}</p>
-                    <p id="wind_mph">Wind: {Math.round(this.state.mph)} MPH</p>
-                    <p id="wind_gust">Gust: {Math.round(this.state.gust)} MPH</p>
+                    <p id="wind_adjective">{this.state.adj}</p>        
+                    <p id="wind_speed">Wind: {Math.round(this.state.speed)} </p>
+                    <p id="wind_gust">Gust: {Math.round(this.state.gust)} {this.state.unit}</p>
                 </div>
             </div>
         )

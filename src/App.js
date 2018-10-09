@@ -7,10 +7,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
+      metric: false
     };
 
     this.testing = this.testing.bind(this);
+    this.imptoMetric = this.imptoMetric.bind(this);
   }
 
   componentDidMount() {
@@ -28,16 +30,32 @@ class App extends Component {
       })
     }
 
+    /* componentDidUpdate(prevProps, prevState) {
+      // only update chart if the data has changed
+      console.log(prevState.metric);
+      console.log(this.state.metric);
+      if (prevState.metric !== this.state.metric) {
+        console.log(prevState);
+      }
+    } */
+
   testing() {
     let info = this.state.data.info;
     return (
       <>
        <City name={info.current_observation.display_location.full} />
-       <InfoBox data_obv={info.current_observation} />
-       <WindInfo data_obv={info.current_observation} />
+       <InfoBox data_obv={info.current_observation} metricState={this.state.metric} />
+       <WindInfo data_obv={info.current_observation} metricState={this.state.metric} />
       </>
     )
   }
+  
+  imptoMetric() {
+    this.setState(prevState => ({
+      metric: !prevState.metric
+    }), () => {
+  })
+}
   
 
   render() {
@@ -45,6 +63,7 @@ class App extends Component {
     return (
       <div className="box">
         {info !== undefined ? this.testing() : null}
+        <button onClick={this.imptoMetric}>Metric</button>
       </div>
       
     )
