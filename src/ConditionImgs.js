@@ -42,6 +42,7 @@ export default class Condition extends Component {
         if (cloudy_condition !== null) {
             if (n >= 6 && n <= 18) {
                 background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646002/Weather/cloudy.jpg)";
+                document.getElementById("box").backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646002/Weather/cloudy.jpg)";
 
                 this.setState({src: "http://icons.wxug.com/i/c/i/mostlycloudy.gif" });
          

@@ -6,7 +6,6 @@ export default class InfoBox extends Component {
     
 
     render(){
-        console.log(this.props.metricState)
         return(
             <div className="infoBox">
             <div className="info">

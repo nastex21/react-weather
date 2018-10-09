@@ -1,2 +1,28 @@
-body {
+body{
+ width: 100vw;
+ height: 900px;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
 }
+
+#root{
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    position: absolute;
+    border: #ffffff63 solid 2px;
+    left: 40px;
+    top: 40px;
+    box-shadow: 6px 7px 5px #00000075;
+   }
+
+   #box{
+    position:absolute;
+    left: -40px;
+    top: -40px;
+    width: 1000px;
+    height: 1000px;
+    background-repeat: no-repeat;   
+    background-attachment: fixed;
+    filter: blur(10px);
+   } 

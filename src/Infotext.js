@@ -16,7 +16,6 @@ export default class Infotext extends Component {
 
     componentDidMount(){
         let info = this.props.data;
-        console.log(info.weather);
         this.setState({
             condition: info.weather,
             temp: Math.round(info.temp_f),
@@ -29,7 +28,6 @@ export default class Infotext extends Component {
     }
 
     componentDidUpdate(prevProps){  
-        console.log(this.props)
         if (this.props.metricState !== prevProps.metricState) {
             let info = this.props.data;
             if(this.props.metricState){
