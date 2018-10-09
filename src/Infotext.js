@@ -9,6 +9,7 @@ export default class Infotext extends Component {
             dewpoint: "",
             humidity: "",
             feelsLike: "",
+            precip: "",
             unit: ""
         }
     }
@@ -22,7 +23,8 @@ export default class Infotext extends Component {
             dewpoint: info.dewpoint_f,
             humidity: info.relative_humidity,
             feelsLike: Math.round(info.feelslike_f),
-            unit: "F"
+            precip: info.precip_today_string,
+            unit: String.fromCharCode(176, 70)
         })
     }
 
@@ -35,14 +37,14 @@ export default class Infotext extends Component {
                     temp: Math.round(info.temp_c),
                     dewpoint: Math.round(info.dewpoint_c),
                     feelsLike: Math.round(info.feelslike_c),
-                    unit: "C"
+                    unit: String.fromCharCode(176, 67)
                 });
             } else {
                 this.setState({
                     temp: Math.round(info.temp_f),
                     dewpoint: Math.round(info.dewpoint_f),
                     feelsLike: Math.round(info.feelslike_f),
-                    unit: "F"
+                    unit: String.fromCharCode(176, 70)
                 })
             }
           }
@@ -58,6 +60,7 @@ export default class Infotext extends Component {
             <p id="dewpoint">Dewpoint: {this.state.dewpoint} {this.state.unit}</p>
             <p id="humdity">Relative Humdity: {this.state.humidity}</p>
             <p id="feelsLike">Feels Like: {this.state.feelsLike} {this.state.unit}</p>
+            <p id="precip">Precipitation Today: {this.state.precip}</p>
           </>
         )
     }

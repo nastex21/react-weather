@@ -8,7 +8,8 @@ class App extends Component {
     super(props);
     this.state = {
       data: [],
-      metric: false
+      metric: false,
+      text: "Change to Metric"
     };
 
     this.testing = this.testing.bind(this);
@@ -30,14 +31,11 @@ class App extends Component {
       })
     }
 
-    /* componentDidUpdate(prevProps, prevState) {
-      // only update chart if the data has changed
-      console.log(prevState.metric);
-      console.log(this.state.metric);
+    componentDidUpdate(prevProps, prevState) {
       if (prevState.metric !== this.state.metric) {
-        console.log(prevState);
+        this.state.metric === true ? this.setState({text: "Change to Imperial"}) : this.setState({text: " Change to Metric"})
       }
-    } */
+    } 
 
   testing() {
     let info = this.state.data.info;
@@ -53,9 +51,9 @@ class App extends Component {
   imptoMetric() {
     this.setState(prevState => ({
       metric: !prevState.metric
-    }), () => {
-  })
-}
+    })
+    )
+  }
   
 
   render() {
@@ -63,7 +61,7 @@ class App extends Component {
     return (
       <div className="box">
         {info !== undefined ? this.testing() : null}
-        <button onClick={this.imptoMetric}>Metric</button>
+        <button onClick={this.imptoMetric}>{this.state.text}</button>
       </div>
       
     )
