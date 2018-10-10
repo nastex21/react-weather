@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Condition from "./ConditionImgs";
+
 
 export default class Infotext extends Component {
     constructor(props){
@@ -51,15 +53,18 @@ export default class Infotext extends Component {
 
     render(){
   
-        return(
-            <>
-            <p id="condition">{this.state.condition}</p>
-            <p id="temp">{this.state.temp} {this.state.unit}</p>
-            <p id="dewpoint">Dewpoint: {this.state.dewpoint} {this.state.unit}</p>
-            <p id="humdity">Relative Humdity: {this.state.humidity}</p>
-            <p id="feelsLike">Feels Like: {this.state.feelsLike} {this.state.unit}</p>
-            <p id="precip">Precipitation Today: {this.state.precip}</p>
-          </>
-        )
+        return [
+            <div id="left-info">
+                <Condition data={this.props.data} />
+                <p id="condition">{this.state.condition}</p>
+                <p id="temp">{this.state.temp} {this.state.unit}</p>
+                <p id="feelsLike">Feels Like: {this.state.feelsLike} {this.state.unit}</p>
+            </div>,
+           <div id="right-info">
+                <p id="dewpoint">Dewpoint: {this.state.dewpoint} {this.state.unit}</p>
+                <p id="humdity">Relative Humdity: {this.state.humidity}</p>
+                <p id="precip">Precipitation Today: {this.state.precip}</p>
+            </div>
+        ]
     }
 }

@@ -172,7 +172,9 @@ export default class Condition extends Component {
 
     render(){
         return (
-            <img id="icon" src={this.state.src} alt="icon images for weather condition" /> 
-        )
+            <>
+                <img id="icon" src={this.state.src} alt="icon images for weather condition" /> 
+            </>
+            )
     }
 }
