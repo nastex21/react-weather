@@ -40,11 +40,11 @@ class App extends Component {
   testing() {
     let info = this.state.data.info;
     return (
-      <>
+      <div id="inside-contents"> 
        <City name={info.current_observation.display_location.full} />
        <InfoBox data_obv={info.current_observation} metricState={this.state.metric} />
        <WindInfo data_obv={info.current_observation} metricState={this.state.metric} />
-      </>
+      </div>
     )
   }
   
@@ -64,7 +64,7 @@ class App extends Component {
         <div id="button">        
         <button onClick={this.imptoMetric}>{this.state.text}
         </button>
-</div>
+        </div>
       </>
       
     )

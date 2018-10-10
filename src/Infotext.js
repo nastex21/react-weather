@@ -53,8 +53,8 @@ export default class Infotext extends Component {
   
         return(
             <>
-            <p id="condition">Conditions: {this.state.condition}</p>
-            <p id="temp">Temperature: {this.state.temp} {this.state.unit}</p>
+            <p id="condition">{this.state.condition}</p>
+            <p id="temp">{this.state.temp} {this.state.unit}</p>
             <p id="dewpoint">Dewpoint: {this.state.dewpoint} {this.state.unit}</p>
             <p id="humdity">Relative Humdity: {this.state.humidity}</p>
             <p id="feelsLike">Feels Like: {this.state.feelsLike} {this.state.unit}</p>
