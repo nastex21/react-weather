@@ -14,7 +14,7 @@ export default class WindInfo extends Component {
     }          
 
     componentDidMount(){
-        let info = this.props.data_obv;
+        let info = this.props.data;
         this.setState({
             direction: info.wind_dir,
             speed: info.wind_mph,
@@ -45,7 +45,7 @@ export default class WindInfo extends Component {
     }
 
     windIcons(){
-        let info = this.props.data_obv;
+        let info = this.props.data;
 
         var wind_dir = info.wind_dir;
 
@@ -87,14 +87,12 @@ export default class WindInfo extends Component {
     render(){
     
         return(
-            <div className="windInfoBox">
-                 <div className="variousInfo">
+                <>
                     <img id="arrowIcons" src={this.state.src} alt="cardinal directions for wind" />
                     <p id="wind_direction">{this.state.direction}</p>
                     <p id="wind_speed">Wind: {Math.round(this.state.speed)} {this.state.unit}</p>
                     <p id="wind_gust">Gust: {Math.round(this.state.gust)} {this.state.unit}</p>
-                </div>
-            </div>
+                </>
         )
     }
 }

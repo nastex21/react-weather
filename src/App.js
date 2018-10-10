@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import City from "./City";
 import InfoBox from "./InfoBox";
-import WindInfo from "./WindInfo"
 
 class App extends Component {
   constructor(props) {
@@ -43,7 +42,6 @@ class App extends Component {
       <div id="inside-contents"> 
        <City name={info.current_observation.display_location.full} />
        <InfoBox data_obv={info.current_observation} metricState={this.state.metric} />
-       <WindInfo data_obv={info.current_observation} metricState={this.state.metric} />
       </div>
     )
   }

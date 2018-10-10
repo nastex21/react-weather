@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Condition from "./ConditionImgs";
+import WindInfo from "./WindInfo";
 
 
 export default class Infotext extends Component {
@@ -52,7 +53,6 @@ export default class Infotext extends Component {
     
 
     render(){
-  
         return [
             <div id="left-info">
                 <Condition data={this.props.data} />
@@ -61,6 +61,7 @@ export default class Infotext extends Component {
                 <p id="feelsLike">Feels Like: {this.state.feelsLike} {this.state.unit}</p>
             </div>,
            <div id="right-info">
+                <WindInfo data={this.props.data} metricState={this.props.metric} />
                 <p id="dewpoint">Dewpoint: {this.state.dewpoint} {this.state.unit}</p>
                 <p id="humdity">Relative Humdity: {this.state.humidity}</p>
                 <p id="precip">Precipitation Today: {this.state.precip}</p>
