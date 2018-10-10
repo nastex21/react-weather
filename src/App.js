@@ -59,10 +59,13 @@ class App extends Component {
   render() {
     let info = this.state.data.info;
     return (
-      <div className="box">
+      <>
         {info !== undefined ? this.testing() : null}
-        <button onClick={this.imptoMetric}>{this.state.text}</button>
-      </div>
+        <div id="button">        
+        <button onClick={this.imptoMetric}>{this.state.text}
+        </button>
+</div>
+      </>
       
     )
   }
