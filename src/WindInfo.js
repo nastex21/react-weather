@@ -25,10 +25,10 @@ export default class WindInfo extends Component {
     }
     
 
-    componentDidUpdate(prevProps){  
-        if (this.props.metricState !== prevProps.metricState) {
-            let info = this.props.data_obv;
-            if(this.props.metricState){
+    componentDidUpdate(prevProps){ 
+        if (this.props.metric !== prevProps.metric) {
+            let info = this.props.data;
+            if(this.props.metric){
                 this.setState({
                     speed: Math.round(info.wind_kph),
                     gust: Math.round(info.wind_gust_kph),
@@ -89,9 +89,9 @@ export default class WindInfo extends Component {
         return(
                 <>
                     <img id="arrowIcons" src={this.state.src} alt="cardinal directions for wind" />
-                    <p id="wind_direction">{this.state.direction}</p>
-                    <p id="wind_speed">Wind: {Math.round(this.state.speed)} {this.state.unit}</p>
-                    <p id="wind_gust">Gust: {Math.round(this.state.gust)} {this.state.unit}</p>
+                    <span id="wind_direction">{this.state.direction}</span>
+                    <span id="wind_speed">Wind: {Math.round(this.state.speed)} <span class="wind-unit">{this.state.unit}</span></span>
+                    <span id="wind_gust">Gust: {Math.round(this.state.gust)} <span class="wind-unit">{this.state.unit}</span></span>
                 </>
         )
     }

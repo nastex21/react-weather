@@ -56,15 +56,15 @@ export default class Infotext extends Component {
         return [
             <div id="left-info">
                 <Condition data={this.props.data} />
-                <p id="condition">{this.state.condition}</p>
-                <p id="temp">{this.state.temp} {this.state.unit}</p>
-                <p id="feelsLike">Feels Like: {this.state.feelsLike} {this.state.unit}</p>
+                <span id="condition">{this.state.condition}</span>
+                <span id="temp">{this.state.temp} <span id="temp-degree" class='degree'>{this.state.unit}</span></span>
+                <span id="feelsLike">Feels Like: {this.state.feelsLike} <span id="feelsLike-degree" class="degree">{this.state.unit}</span></span>
             </div>,
            <div id="right-info">
-                <WindInfo data={this.props.data} metricState={this.props.metric} />
-                <p id="dewpoint">Dewpoint: {this.state.dewpoint} {this.state.unit}</p>
-                <p id="humdity">Relative Humdity: {this.state.humidity}</p>
-                <p id="precip">Precipitation Today: {this.state.precip}</p>
+                <WindInfo data={this.props.data} metric={this.props.metricState} />
+                <span id="dewpoint">Dewpoint: {this.state.dewpoint} <span id="dewpoint-degree" class='degree'>{this.state.unit}</span></span>
+                <span id="humdity">Relative Humdity: {this.state.humidity}</span>
+                <span id="precip">Precipitation Today: {this.state.precip}</span>
             </div>
         ]
     }
