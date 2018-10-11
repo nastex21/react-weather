@@ -44,12 +44,6 @@ body {
     top: 40px;
 }
 
-
-
-.cityInfo{
-    text-align: center;
-}
-
 .infoBox{
 }
 
@@ -62,7 +56,7 @@ body {
 @media only screen and (min-width: 800px) {
  #glass-container {
      width: 900px;
-      height: 500px;
+    height: 500px;
 }
 
 #box {
@@ -82,16 +76,20 @@ body {
     overflow: hidden;
     display: grid;
     grid-auto-columns: 625px 275px;
-    grid-auto-rows: 15% 15% 70%;
+    grid-auto-rows: 70% 15% 15%;
     grid-template-areas: 
+    "left-info right-info"
+    "left-info right-info"
     "city city"
-    "left-info right-info"
-    "left-info right-info"
 }
 
 .cityInfo{
     grid-area: city;
+    font-size: 3vh;
+    position: relative;
+    left: 350px;
 }
+
 
 #left-info{
     grid-area: left-info;
@@ -106,5 +104,35 @@ body {
     justify-self: center;
 }
 
+#temp{
+    font-size: 10vh;
+    position: absolute;
+    left: 370px;
+    top: 140px;
+}
+
+#temp-degree{
+    font-size: 5vh;
+}
+
+#feelsLike {
+    position: absolute;
+    left: 400px;
+    top: 250px;
+}
+
+#icon {
+    position: absolute;
+    top: 90px;
+    left: 155px;
+    height: 80px;
+}
+
+#condition{
+    font-size: 5vh;
+    position: absolute;
+    top: 180px;
+    left: 146px;
+}
 
 }
