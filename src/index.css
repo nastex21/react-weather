@@ -131,8 +131,36 @@ body {
 #condition{
     font-size: 5vh;
     position: absolute;
-    top: 180px;
+    top: 175px;
     left: 146px;
 }
+
+#arrowIcons{
+    height: 80px;
+    position: relative;
+    top: 90px;
+    left: 40px;
+}
+
+#wind_speed{
+    position: absolute;
+    font-size: 5vh;
+    right: 150px;
+    top: 175px;
+}
+
+#wind_gust {
+    position: absolute;
+    right: 160px;
+    top: 225px;
+}
+
+ #wind_direction{
+    position: absolute;
+    top: 250px;
+    right: 185px;
+} 
+
+
 
 }
