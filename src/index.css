@@ -64,11 +64,12 @@ path:hover {
     }
 
     svg {
+        position: absolute;
         width: 900px;
         height: 500px;
         margin-left: 5px;
-        left: 40px;
-        top: 40px;
+        left: 36px;
+        top: 42px;
     }
     
 
