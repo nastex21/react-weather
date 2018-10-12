@@ -63,7 +63,7 @@ export default class Infotext extends Component {
            <div id="right-info">
                 <WindInfo data={this.props.data} metric={this.props.metricState} />
                 <span id="dewpoint">Dewpoint: {this.state.dewpoint} <span id="dewpoint-degree" class='degree'>{String.fromCharCode(176)}</span><span id="dew-unit">{this.state.unit}</span></span>
-                <span id="humdity">Relative Humdity: {this.state.humidity}</span>
+                <span id="humidity">Relative Humdity: {this.state.humidity}</span>
                 <span id="precip">Precipitation Today: {this.state.precip}</span>
             </div>
         ]

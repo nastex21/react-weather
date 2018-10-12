@@ -1,4 +1,5 @@
-html, body{
+html,
+body {
     width: 100%;
     height: 100%;
 }
@@ -12,14 +13,15 @@ body {
 
 
 #glass-container {
+    position: absolute;
     width: 100%;
     height: 500px;
     overflow: hidden;
-    position: absolute;
     border: #ffffff63 solid 2px;
     left: 40px;
     top: 40px;
     box-shadow: 6px 7px 5px #00000075;
+    z-index: -1;
 }
 
 #copy-body {
@@ -32,6 +34,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     filter: blur(10px);
+    z-index: -1;
 }
 
 #box {
@@ -42,125 +45,151 @@ body {
     margin-left: 5px;
     left: 40px;
     top: 40px;
+    z-index: 999;
 }
 
-.infoBox{
+path {
+    transition: fill .5s;
+    fill: #000;
 }
 
-.windInfoBox {
+path:hover {
+    fill: #000;
 }
 
-#button {
-}
- 
 @media only screen and (min-width: 800px) {
- #glass-container {
-     width: 900px;
-    height: 500px;
-}
+    #glass-container {
+        width: 900px;
+        height: 500px;
+    }
 
-#box {
-    color: white;
-    width: 900px;
-    height: 500px;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-rows: 440px 60px;
-    grid-template-areas: "inside-contents"
-    "button"
-}
+    svg {
+        width: 900px;
+        height: 500px;
+        margin-left: 5px;
+        left: 40px;
+        top: 40px;
+    }
+    
 
-#inside-contents{
-    grid-area: inside-contents;
-    overflow: hidden;
-    display: grid;
-    grid-auto-columns: 625px 275px;
-    grid-auto-rows: 70% 15% 15%;
-    grid-template-areas: 
-    "left-info right-info"
-    "left-info right-info"
-    "city city"
-}
+    #box {
+        color: white;
+        width: 900px;
+        height: 500px;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-rows: 440px 60px;
+        grid-template-areas: "inside-contents"
+            "button"
+    }
 
-.cityInfo{
-    grid-area: city;
-    font-size: 3vh;
-    position: relative;
-    left: 350px;
-}
+    #inside-contents {
+        grid-area: inside-contents;
+        overflow: hidden;
+        display: grid;
+        grid-auto-columns: 625px 275px;
+        grid-auto-rows: 70% 15% 15%;
+        grid-template-areas:
+            "left-info right-info"
+            "left-info right-info"
+            "city city"
+    }
 
-
-#left-info{
-    grid-area: left-info;
-}
-
-#right-info {
-    grid-area: right-info;
-}
-
-#button {
-    grid-area: button;
-    justify-self: center;
-}
-
-#temp{
-    font-size: 10vh;
-    position: absolute;
-    left: 370px;
-    top: 140px;
-}
-
-#temp-degree{
-    font-size: 5vh;
-}
-
-#feelsLike {
-    position: absolute;
-    left: 400px;
-    top: 250px;
-}
-
-#icon {
-    position: absolute;
-    top: 90px;
-    left: 155px;
-    height: 80px;
-}
-
-#condition{
-    font-size: 5vh;
-    position: absolute;
-    top: 175px;
-    left: 146px;
-}
-
-#arrowIcons{
-    height: 80px;
-    position: relative;
-    top: 90px;
-    left: 40px;
-}
-
-#wind_speed{
-    position: absolute;
-    font-size: 5vh;
-    right: 150px;
-    top: 175px;
-}
-
-#wind_gust {
-    position: absolute;
-    right: 160px;
-    top: 225px;
-}
-
- #wind_direction{
-    position: absolute;
-    top: 250px;
-    right: 185px;
-} 
+    .cityInfo {
+        grid-area: city;
+        font-size: 3vh;
+        position: relative;
+        left: 390px;
+    }
 
 
+    #left-info {
+        grid-area: left-info;
+    }
+
+    #right-info {
+        grid-area: right-info;
+    }
+
+    #button {
+        grid-area: button;
+        justify-self: center;
+    }
+
+    #temp {
+        font-size: 10vh;
+        position: absolute;
+        left: 400px;
+        top: 145px;
+    }
+
+    #temp-degree {
+        font-size: 5vh;
+    }
+
+    #feelsLike {
+        position: absolute;
+        left: 400px;
+        top: 250px;
+    }
+
+    #icon {
+        position: absolute;
+        top: 90px;
+        left: 200px;
+        height: 80px;
+    }
+
+    #condition {
+        font-size: 5vh;
+        position: absolute;
+        top: 175px;
+        left: 146px;
+    }
+
+    #arrowIcons {
+        height: 80px;
+        position: relative;
+        top: 90px;
+        left: 40px;
+    }
+
+    #wind_speed {
+        position: absolute;
+        font-size: 5vh;
+        right: 150px;
+        top: 175px;
+    }
+
+    #wind_gust {
+        position: absolute;
+        right: 145px;
+        top: 225px;
+    }
+
+    #wind_direction {
+        position: absolute;
+        top: 250px;
+        right: 173px;
+    }
+
+    #dewpoint {
+        position: absolute;
+        right: 130px;
+        top: 275px;
+    }
+
+    #humidity {
+        position: absolute;
+        top: 300px;
+        right: 110px;
+    }
+
+    #precip {
+        position: absolute;
+        top: 440px;
+        right: 70px;
+    }
 
 }
