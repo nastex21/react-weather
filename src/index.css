@@ -9,6 +9,9 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow: hidden;
+    /*font-family: 'Original Surfer', cursive;
+    font-family: 'Montserrat', sans-serif;*/
+    font-family: 'Arima Madurai', cursive;
 }
 
 
@@ -47,6 +50,19 @@ path:hover {
     fill: #000;
 }
 
+.circle1 {
+    border-radius: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+
+    -webkit-box-shadow: 0 0 1px 0px rgb(255, 255, 255);
+    box-shadow: 0 0 1px 0px rgb(255, 255, 255);
+    z-index: 86;
+}
+
+
+
 @media only screen and (min-width: 800px) {
     #glass-container {
         position: absolute;
@@ -73,7 +89,7 @@ path:hover {
         z-index: -1;
     }
 
-    #black-opa{
+    #black-opa {
         position: absolute;
         width: 900px;
         height: 500px;
@@ -85,7 +101,7 @@ path:hover {
         right: 0;
     }
 
-    #left-opa{
+    #left-opa {
         position: absolute;
         width: 900px;
         height: 500px;
@@ -109,26 +125,15 @@ path:hover {
         width: 900px;
         height: 500px;
         z-index: 999;
-        display: grid;
-        grid-template-rows: 440px 60px;
-        grid-template-areas: "inside-contents"
-            "button"
     }
 
     #inside-contents {
-        grid-area: inside-contents;
         overflow: hidden;
-        display: grid;
-        grid-auto-columns: 625px 275px;
-        grid-auto-rows: 70% 15% 15%;
-        grid-template-areas:
-            "left-info right-info"
-            "left-info right-info"
-            "city city"
+        width: 900px;
+        height: 400px;
     }
 
     .cityInfo {
-        grid-area: city;
         font-size: 3vh;
         position: relative;
         left: 390px;
@@ -136,23 +141,23 @@ path:hover {
 
 
     #left-info {
-        grid-area: left-info;
     }
 
     #right-info {
-        grid-area: right-info;
     }
 
     #button {
-        grid-area: button;
-        justify-self: center;
+
     }
 
     #temp {
         font-size: 70px;
         position: absolute;
-        left: 390px;
-        top: 65px;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
     }
 
     #temp-degree {
@@ -221,6 +226,18 @@ path:hover {
         position: absolute;
         top: 440px;
         right: 70px;
+    }
+
+    .circle1 {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border: 5px solid #fcfcfc;
+        width: 200px;
+        height: 200px;
     }
 
 }
