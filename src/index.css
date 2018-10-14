@@ -1,18 +1,18 @@
 html,
 body {
     height: 100%;
-   /*  min-height: 100%; */
+    /*  min-height: 100%; */
 }
 
 body {
     /* background-size: cover; */
     font-family: 'Arima Madurai', cursive;
 
-     /* Center and scale the image nicely */
-     background-repeat: no-repeat;
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
 }
 
-#glass-container{
+#glass-container {
     position: absolute;
     margin: auto;
     top: 0;
@@ -34,8 +34,188 @@ body {
     z-index: -1;
 }
 
-@media only screen and (max-width: 899px ){
-    body{
+p {
+    display: inline;
+}
+
+#left-opa {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 6;
+}
+
+path {
+    transition: fill .5s;
+    fill: #000;
+}
+
+path:hover {
+    fill: #000;
+}
+
+#box {
+    color: white;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    overflow: hidden;
+}
+
+#inside-contents {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "left-info mid-info right-info"
+        "city-info city-info city-info"
+}
+
+#left-info {
+    grid-area: left-info;
+    display: grid;
+    grid-template-areas: "empty""circle1"
+}
+
+#mid-info {
+    grid-area: mid-info;
+    display: grid;
+    grid-template-areas: "circle2""precip"
+}
+
+#mid-info>p {
+    grid-area: precip;
+    text-align: center;
+}
+
+#right-info {
+    grid-area: right-info;
+    display: grid;
+    grid-template-areas: "empty""circle3"
+}
+
+.cityInfo {
+    grid-area: city-info;
+    position: relative;
+    top: -25px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+button {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: white;
+    padding: 10px;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+.circle1,
+.circle2,
+.circle3 {
+    position: relative;
+    justify-self: center;
+    border-radius: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+    -webkit-box-shadow: 0 0 1px 0px rgb(255, 255, 255);
+    box-shadow: 0 0 1px 0px rgb(255, 255, 255);
+    z-index: 86;
+}
+
+.circle1 {
+    grid-area: circle1;
+    display: grid;
+    grid-template-areas: "icon icon"
+        "condition condition";
+}
+
+#icon {
+    grid-area: icon;
+    justify-self: center;
+    position: relative;
+}
+
+#condition {
+    grid-area: condition;
+    justify-self: center;
+}
+
+.circle2 {
+    grid-area: circle2;
+    display: grid;
+    grid-template-areas: "temp temp"
+        "feelsLike feelsLike"
+}
+
+#temp {
+    grid-area: temp;
+    justify-self: center;
+}
+
+#feelsLike {
+    grid-area: feelsLike;
+    justify-self: center;
+}
+
+.circle3 {
+    grid-area: circle3;
+    display: grid;
+    grid-template-areas: "wind wind"
+        "windmeasurement windmeasurement"
+        "direction direction"
+        "gust gust"
+}
+
+#wind {
+    grid-area: wind;
+}
+
+#wind_measurements {
+    grid-area: windmeasurement;
+}
+
+#gust {
+    grid-area: gust;
+}
+
+#direction {
+    grid-area: direction;
+}
+
+@media only screen and (max-width: 321px){
+    #icon{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 899px) {
+    body {
         background-position: center;
         background-size: cover;
         overflow: hidden;
@@ -52,10 +232,131 @@ body {
 
     }
 
+    #left-opa {
+        width: 100%;
+        height: 50%;
+    }
 
+    #mask2 {
+        width: 100%;
+        height: 100%;
+    }
+
+    #inner-rect {
+        width: 100%;
+        height: 100%;
+    }
+
+    #outer-rect {
+        width: 100%;
+        height: 100%;
+    }
+
+    #box {
+        width: 100%;
+        height: 50%;
+    }
+
+    #inside-contents {
+        width: 100%;
+        height: 90%;
+        grid-template-rows: 95% 5%;
+    }
+
+    #left-info {
+        grid-template-rows: 10% 90%;
+    }
+
+    #mid-info {
+        grid-template-rows: 85% 15%;
+    }
+
+    #mid-info>p {
+        position: relative;
+        top: -30%;
+        font-size: 2vh;
+    }
+
+    #right-info {
+        grid-template-rows: 10% 90%;
+    }
+
+    .cityInfo {
+        top: -20%;
+
+    }
+
+    #button {
+        height: 10%;
+    }
+
+    button {
+        width: 30%;
+    }
+
+    .circle1,
+    .circle2,
+    .circle3 {
+        border: 1px solid #fcfcfc;
+        border: 1px solid black;
+        width: 100%;
+        height: 50%;
+
+    }
+
+    .circle1 {
+        grid-template-rows: 100% 5%;
+        grid-template-columns: 50% 50%;
+    }
+
+    .circle2 {
+        grid-template-rows: 40% 60%;
+        grid-template-columns: 50% 50%;
+    }
+
+    #temp {
+        font-size: 4.5vh;
+    }
+
+    #feelsLike {
+        font-size: 2vh;
+    }
+
+
+    .circle3 {
+        grid-template-rows: 10% 50% 20% 20%;
+        grid-template-columns: 50% 50%;
+    }
+
+    #wind {
+        font-size: 2vh;
+        margin: auto;
+    }
+
+    #wind_measurements {
+        margin: auto;
+    }
+
+    #wind_speed {
+        font-size: 6vw;
+        justify-self: center;
+    }
+
+    #wind_unit {
+        font-size: 2vh;
+        margin: auto;
+    }
+
+    #gust {
+        margin: auto;
+        font-size: 1.5vh;
+    }
+
+    #direction {
+        margin: auto;
+        font-size: 1.5vh;
+    }
 }
-
-
 
 @media only screen and (min-width: 900px) {
     body {
@@ -78,134 +379,60 @@ body {
         height: 1000px;
     }
 
-    p {
-        display: inline;
-    }
-
-    path {
-        transition: fill .5s;
-        fill: #000;
-    }
-
-    path:hover {
-        fill: #000;
-    }
 
     #left-opa {
-        position: absolute;
-        width: 900px;
-        height: 500px;
-        margin-left: 5px;
-        margin: auto;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        z-index: 6;
-    }
-
-    #mask2{
         width: 900px;
         height: 500px;
     }
 
-    #inner-rect{
+    #mask2 {
         width: 900px;
         height: 500px;
     }
 
-    #outer-rect{
+    #inner-rect {
+        width: 900px;
+        height: 500px;
+    }
+
+    #outer-rect {
         width: 900px;
         height: 500px;
     }
 
     #box {
-        color: white;
-        position: absolute;
-        margin: auto;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
         width: 900px;
         height: 500px;
-        z-index: 999;
-        overflow: hidden;
     }
 
     #inside-contents {
-        overflow: hidden;
         width: 900px;
         height: 400px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 350px 50px;
-        grid-template-areas: "left-info mid-info right-info"
-            "city-info city-info city-info"
     }
 
     #left-info {
-        grid-area: left-info;
-        display: grid;
         grid-template-rows: 50px 300px;
-        grid-template-areas: "empty""circle1"
     }
 
     #mid-info {
-        grid-area: mid-info;
-        display: grid;
         grid-template-rows: 300px 50px;
-        grid-template-areas: "circle2""precip"
-    }
-
-    #mid-info>p {
-        grid-area: precip;
-        text-align: center;
     }
 
     #right-info {
-        grid-area: right-info;
-        display: grid;
         grid-template-rows: 50px 300px;
-        grid-template-areas: "empty""circle3"
-
     }
 
     .cityInfo {
-        grid-area: city-info;
-        position: relative;
         top: -25px;
     }
 
-    h1 {
-        text-align: center;
-    }
-
-
     #button {
-        position: relative;
         height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
     }
 
     button {
         width: 200px;
-        background-color: Transparent;
-        background-repeat: no-repeat;
-        border: 1px solid black;
-        cursor: pointer;
-        overflow: hidden;
-        outline: none;
-        color: white;
-        padding: 10px;
-    }
-
-    button:hover {
-        background-color: white;
-        color: black;
     }
 
     #precip {
@@ -216,84 +443,43 @@ body {
     .circle1,
     .circle2,
     .circle3 {
-        position: relative;
         border: 5px solid #fcfcfc;
         border: 3px solid black;
         width: 250px;
         height: 250px;
-        justify-self: center;
-        border-radius: 50%;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-        filter: alpha(opacity=60);
-        opacity: 0.6;
-        -webkit-box-shadow: 0 0 1px 0px rgb(255, 255, 255);
-        box-shadow: 0 0 1px 0px rgb(255, 255, 255);
-        z-index: 86;
     }
 
     .circle1 {
-        grid-area: circle1;
-        display: grid;
         grid-template-rows: 130px 126px;
         grid-template-columns: 128px 128px;
-        grid-template-areas: "icon icon"
-            "condition condition";
     }
 
     #icon {
-        grid-area: icon;
-        justify-self: center;
-        position: relative;
         top: 22px;
     }
 
-    #condition {
-        grid-area: condition;
-        justify-self: center;
-    }
-
     .circle2 {
-        grid-area: circle2;
-        margin-top: 10px;
-        display: grid;
         grid-template-rows: 130px 126px;
         grid-template-columns: 128px 128px;
-        grid-template-areas: "temp temp"
-            "feelsLike feelsLike"
     }
 
     #temp {
         font-size: 65px;
-        grid-area: temp;
-        justify-self: center;
-    }
-
-    #feelsLike {
-        grid-area: feelsLike;
-        justify-self: center;
     }
 
     .circle3 {
-        grid-area: circle3;
-        display: grid;
         grid-template-rows: 30px 120px 53px 53px;
         grid-template-columns: 128px 128px;
-        grid-template-areas: "wind wind"
-            "windmeasurement windmeasurement"
-            "direction direction"
-            "gust gust"
     }
 
     #wind {
         font-size: 20px;
-        grid-area: wind;
         justify-self: center;
         position: relative;
         top: -5px;
     }
 
     #wind_measurements {
-        grid-area: windmeasurement;
         justify-self: center;
     }
 
@@ -306,18 +492,14 @@ body {
     }
 
     #gust {
-        grid-area: gust;
         position: relative;
         top: -20px;
         justify-self: center;
     }
 
     #direction {
-        grid-area: direction;
         justify-self: center;
         position: relative;
         top: -20px;
     }
-
-
 }

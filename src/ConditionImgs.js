@@ -9,14 +9,17 @@ export default class Condition extends Component {
         this.conditionCheck = this.conditionCheck.bind(this);
       }
 
+
+
+    //if the component did mount, run that function
     componentDidMount(){
         this.conditionCheck();
-        
     }
 
+    //checks the json data and the condition of the weather (rainy, icy, etc). Then updates the state with the src file that will generate in the background.
     conditionCheck(){
         let data = this.props.data;
-        var d = new Date();
+        var d = new Date(); //d and n check what time it is for the user.
         var n = d.getHours();
         var condition = data.weather;
 
@@ -42,15 +45,13 @@ export default class Condition extends Component {
         var copyBody = document.querySelector("#copy-body");
 
         //Check for conditions: Overcast
-        console.log(overcast_condition);
-        console.log(clear_condition);
         if(overcast_condition !== null){
-                if (n >= 6 && n <= 18) {
+                if (n >= 6 && n <= 18) { // if n is after 6 AM and before 6 PM
                     background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/cloudscape-384672_1920_jngvmo.jpg)";
                     copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/cloudscape-384672_1920_jngvmo.jpg)";
     
                     this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487196/Icons/cloudy.png"});
-                } else if (n < 6 || n > 18) {
+                } else if (n < 6 || n > 18) { //if n is before 6 AM and after 6 PM
                     background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/moon-3059861_1920_gmz0fh.jpg)";
                     copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/moon-3059861_1920_gmz0fh.jpg)";
     
@@ -157,7 +158,6 @@ export default class Condition extends Component {
         //if condition is an empty string
             if (condition === "") {
                 if (n >= 5 && n <= 7) {
-                    
                         background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646022/Weather/sunrise-182302.jpg)"; 
                         copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646022/Weather/sunrise-182302.jpg)"; 
 

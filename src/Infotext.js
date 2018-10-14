@@ -15,6 +15,7 @@ export default class Infotext extends Component {
         }
     }
 
+    //when the component mounts, set the state with this information
     componentDidMount(){
         let info = this.props.data;
         this.setState({
@@ -26,6 +27,7 @@ export default class Infotext extends Component {
         })
     }
 
+    //when a component gets updated, check the previous state with the current state
     componentDidUpdate(prevProps){  
         if (this.props.metricState !== prevProps.metricState) {
             let info = this.props.data;
@@ -47,6 +49,7 @@ export default class Infotext extends Component {
     
 
     render(){
+        //generates virtual DOM elements
         return [
             <div id="left-info">
               <div className="circle1">
