@@ -89,9 +89,9 @@ export default class WindInfo extends Component {
         return(
                 <>
                     <img id="arrowIcons" src={this.state.src} alt="cardinal directions for wind" />
-                    <span id="wind_direction">{this.state.direction}</span>
-                    <span id="wind_speed"> {Math.round(this.state.speed)} <span class="wind-unit">{this.state.unit}</span></span>
-                    <span id="wind_gust">Gust: {Math.round(this.state.gust)} <span class="wind-unit">{this.state.unit}</span></span>
+                    <p><span id="wind_direction">{this.state.direction}</span></p>
+                    <p><span id="wind_speed"> {Math.round(this.state.speed)} <span className="wind-unit">{this.state.unit}</span></span></p>
+                    <p><span id="wind_gust">Gust: {Math.round(this.state.gust)} <span className="wind-unit">{this.state.unit}</span></span></p>
                 </>
         )
     }

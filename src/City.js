@@ -5,7 +5,7 @@ export default class City extends Component {
     render(){
         return(
             <div className="cityInfo">
-                <span id="city">{this.props.name}</span>
+                <h1 id="city">{this.props.name}</h1>
             </div>
         )
     }

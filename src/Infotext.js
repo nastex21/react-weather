@@ -57,12 +57,16 @@ export default class Infotext extends Component {
             <div id="left-info">
                 <Condition data={this.props.data} />
                 <div className="circle1" />
-                <span id="condition">{this.state.condition}</span>
-                <span id="temp">{this.state.temp} <span id="temp-degree" className='degree'>{String.fromCharCode(176)}<span id="feh-unit">{this.state.unit}</span></span></span>
-                <span id="feelsLike">Feels Like: {this.state.feelsLike} <span id="feelsLike-degree" className="degree">{String.fromCharCode(176)}</span><span id="realFeelUnit">{this.state.unit}</span></span>
+                <p id="condition">{this.state.condition}</p>
+            </div>,
+            <div id="mid-info">
+              <div className="circle2" />
+                <p id="temp">{this.state.temp} <span id="temp-degree" className='degree'>{String.fromCharCode(176)}<span id="feh-unit">{this.state.unit}</span></span></p>
+                <p id="feelsLike">Feels Like: {this.state.feelsLike} <span id="feelsLike-degree" className="degree">{String.fromCharCode(176)}</span><span id="realFeelUnit">{this.state.unit}</span></p>
             </div>,
            <div id="right-info">
                 <WindInfo data={this.props.data} metric={this.props.metricState} />
+                <div className="circle3" />
                 <span id="dewpoint">Dewpoint: {this.state.dewpoint} <span id="dewpoint-degree" className='degree'>{String.fromCharCode(176)}</span><span id="dew-unit">{this.state.unit}</span></span>
                 <span id="humidity">Relative Humdity: {this.state.humidity}</span>
                 <span id="precip">Precipitation Today: {this.state.precip}</span>

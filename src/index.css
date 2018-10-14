@@ -17,7 +17,7 @@ body {
 
 #glass-container {
     overflow: hidden;
-    border: #ffffff63 solid 2px;
+    border: none;
     box-shadow: 6px 7px 5px #00000075;
     z-index: -1;
 }
@@ -50,15 +50,20 @@ path:hover {
     fill: #000;
 }
 
-.circle1 {
+.circle1,
+.circle2,
+.circle3 {
     border-radius: 50%;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
     filter: alpha(opacity=60);
     opacity: 0.6;
-
     -webkit-box-shadow: 0 0 1px 0px rgb(255, 255, 255);
     box-shadow: 0 0 1px 0px rgb(255, 255, 255);
     z-index: 86;
+}
+
+p {
+    display: inline;
 }
 
 
@@ -78,8 +83,6 @@ path:hover {
 
     #copy-body {
         position: absolute;
-        left: -40px;
-        top: -40px;
         width: 1000px;
         height: 1000px;
         background-size: 100% 100%;
@@ -131,113 +134,89 @@ path:hover {
         overflow: hidden;
         width: 900px;
         height: 400px;
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: 350px 50px;
+        grid-template-areas: "left-info mid-info right-info"
+            "city-info city-info city-info"
     }
-
-    .cityInfo {
-        font-size: 3vh;
-        position: relative;
-        left: 390px;
-    }
-
 
     #left-info {
+        grid-area: left-info
+    }
+
+    #mid-info {
+        grid-area: mid-info
     }
 
     #right-info {
+        grid-area: right-info
     }
 
-    #button {
+    .cityInfo {
+        grid-area: city-info
+    }
 
+    h1 {
+        text-align: center;
+        top: 50px;
+    }
+
+
+    #button {
+        position: relative;
+        height: 100px;
     }
 
     #temp {
-        font-size: 70px;
-        position: absolute;
-        margin: auto;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
+        position: relative;
+        top: -175px;
+        left: 65px;
+        font-size: 65px;
     }
 
-    #temp-degree {
-        font-size: 5vh;
-    }
+    #temp-degree {}
 
     #feelsLike {
-        position: absolute;
-        left: 410px;
-        top: 140px;
+        position: relative;
+        top: -145px;
+        left: -80px;
     }
 
-    #icon {
-        position: absolute;
-        top: 90px;
-        left: 110px;
-        height: 80px;
-    }
-
-    #condition {
-        font-size: 5vh;
-        position: absolute;
-        top: 160px;
-        left: 46px;
-    }
+    #condition {}
 
     #arrowIcons {
         height: 80px;
+
+    }
+
+    #wind_speed {}
+
+    #wind_gust {}
+
+    #wind_direction {}
+
+    #dewpoint {}
+
+    #humidity {}
+
+    #precip {}
+
+    .circle1,
+    .circle2,
+    .circle3 {
         position: relative;
-        top: 81px;
-        left: 90px;
-    }
-
-    #wind_speed {
-        position: relative;
-        font-size: 5vh;
-        left: -25px;
-        top: 110px;
-    }
-
-    #wind_gust {
-        position: relative;
-        right: 145px;
-        top: 225px;
-    }
-
-    #wind_direction {
-        position: absolute;
-        top: 250px;
-        right: 173px;
-    }
-
-    #dewpoint {
-        position: absolute;
-        right: 130px;
-        top: 275px;
-    }
-
-    #humidity {
-        position: absolute;
-        top: 300px;
-        right: 110px;
-    }
-
-    #precip {
-        position: absolute;
-        top: 440px;
-        right: 70px;
-    }
-
-    .circle1 {
-        position: absolute;
-        margin: auto;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
+        left: 22px;
         border: 5px solid #fcfcfc;
-        width: 200px;
-        height: 200px;
+        border: 3px solid black;
+        width: 250px;
+        height: 250px;
     }
+
+    .circle2 {
+       top: 5px;
+    }
+
+
 
 }
