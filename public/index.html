@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
   <!--
       manifest.json provides metadata used when your web app is added to the
@@ -30,12 +30,12 @@
   </div>
 
   <!-- design effect-->
-  <svg id="left-opa" viewbox="0 0 100 100" preserveAspectRatio="none" width="900px" height="500px">
+  <svg id="left-opa" viewbox="0 0 100 100" preserveAspectRatio="none" >
     <defs>
-      <mask id="mask2" x="0" y="0" width="900px" height="500px" >
-      <rect x="0" y="0" width="900px" height="500px" fill="#FFF" />
+      <mask id="mask2" x="0" y="0">
+      <rect id="inner-rect" x="0" y="0" fill="#FFF" />
     </defs>
-    <rect x="0" y="0" width="900px" height="500px" mask="url(#mask2)" fill-opacity="0.7" />
+    <rect id="outer-rect" x="0" y="0" mask="url(#mask2)" fill-opacity="0.7" />
   </svg>
 
 
