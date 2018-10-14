@@ -8,7 +8,7 @@ class App extends Component {
     this.state = {
       data: [],
       metric: false,
-      text: "Change to Metric"
+      text: "Metric"
     };
 
     this.testing = this.testing.bind(this);
@@ -32,7 +32,7 @@ class App extends Component {
 
     componentDidUpdate(prevProps, prevState) {
       if (prevState.metric !== this.state.metric) {
-        this.state.metric === true ? this.setState({text: "Change to Imperial"}) : this.setState({text: " Change to Metric"})
+        this.state.metric === true ? this.setState({text: "Imperial"}) : this.setState({text: "Metric"})
       }
     } 
 
