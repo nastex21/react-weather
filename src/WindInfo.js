@@ -4,13 +4,11 @@ export default class WindInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            src: "blank.jpg",
             direction: "",
             speed: "",
             gust: "",
             unit: ""
         }
-        this.windIcons = this.windIcons.bind(this);
     }          
 
     componentDidMount(){
@@ -21,7 +19,6 @@ export default class WindInfo extends Component {
             gust: info.wind_gust_mph,
             unit: "MPH"
         })
-        this.windIcons();
     }
     
 
@@ -44,54 +41,14 @@ export default class WindInfo extends Component {
           }
     }
 
-    windIcons(){
-        let info = this.props.data;
-
-        var wind_dir = info.wind_dir;
-
-        var northwest = wind_dir.match(/NW|WNW|NNW/);
-
-        var southwest = wind_dir.match(/SW|WSW|SSW/);
-
-        var west = wind_dir.match(/W/);
-
-        var northeast = wind_dir.match(/NE|NNE|ENE/);
-
-        var southeast = wind_dir.match(/SE|SSE|ESE/);
-
-        var east = wind_dir.match(/E/);
-
-        var north = wind_dir.match(/N/);
-
-        var south = wind_dir.match(/S/);
-
-        if (northwest !== null) {
-            this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/c_scale,q_auto,w_50/v1468745818/Arrows/northwestarrow.png"});
-        } else if (southwest !== null) {
-            this.setState({src:"https://res.cloudinary.com/nasax2000/image/upload/c_scale,q_auto,w_50/v1468745818/Arrows/southwestarrow.png"});
-        } else if (northeast !== null) {
-            this.setState({src:"https://res.cloudinary.com/nasax2000/image/upload/c_scale,q_auto,w_50/v1468745818/Arrows/northeastarrow.png"});
-        } else if (southeast !== null) {
-            this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/c_scale,q_auto,w_50/v1468745818/Arrows/southeastarrow.png"});
-        } else if (north !== null) {
-            this.setState({src:"https://res.cloudinary.com/nasax2000/image/upload/c_scale,q_auto,w_50/v1468745818/Arrows/northarrow.png" });
-        } else if (south !== null) {
-             this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/c_scale,q_auto,w_50/v1468745818/Arrows/southarrow.png" });
-        } else if (east !== null) {
-             this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/c_scale,q_auto,w_50/v1468745818/Arrows/eastarrow.png"});
-        } else if (west !== null) {
-            this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/c_scale,q_auto,w_50/v1468745818/Arrows/westarrow.png" });
-        }
-    }
-
     render(){
     
         return(
                 <>
-                    <img id="arrowIcons" src={this.state.src} alt="cardinal directions for wind" />
-                    <p><span id="wind_direction">{this.state.direction}</span></p>
-                    <p><span id="wind_speed"> {Math.round(this.state.speed)} <span className="wind-unit">{this.state.unit}</span></span></p>
-                    <p><span id="wind_gust">Gust: {Math.round(this.state.gust)} <span className="wind-unit">{this.state.unit}</span></span></p>
+                    <p id="wind"><span id="wind_label">Wind</span></p>
+                    <p id="wind_measurements"><span id="wind_speed"> {Math.round(this.state.speed)} <span id="wind_unit">{this.state.unit}</span></span></p>
+                    <p id="direction"><span id="wind_direction">{this.state.direction}</span></p>
+                    <p id="gust"><span id="gust_speed">Gust: {Math.round(this.state.gust)} <span id="gust-unit">{this.state.unit}</span></span></p>
                 </>
         )
     }

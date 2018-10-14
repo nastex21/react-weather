@@ -146,11 +146,21 @@ p {
     }
 
     #mid-info {
-        grid-area: mid-info
+        grid-area: mid-info;
+        display: grid;
+        grid-template-rows: 300px 50px;
+        grid-template-areas: "circle2" "precip"
+    }
+
+    #mid-info > p {
+        grid-area: precip;
+        text-align: center;
     }
 
     #right-info {
-        grid-area: right-info
+        grid-area: right-info;
+        display: grid;
+
     }
 
     .cityInfo {
@@ -159,7 +169,6 @@ p {
 
     h1 {
         text-align: center;
-        top: 50px;
     }
 
 
@@ -170,8 +179,6 @@ p {
 
     #temp {
         position: relative;
-        top: -175px;
-        left: 65px;
         font-size: 65px;
     }
 
@@ -179,20 +186,25 @@ p {
 
     #feelsLike {
         position: relative;
-        top: -145px;
-        left: -80px;
+
     }
 
     #condition {}
 
-    #arrowIcons {
-        height: 80px;
 
+    #wind{
+        font-size: 20px;
     }
 
-    #wind_speed {}
+    #wind_speed {
+        font-size: 65px;
+    }
 
-    #wind_gust {}
+    #wind_unit {
+        font-size: 20px;
+    }
+
+    #gust_speed {}
 
     #wind_direction {}
 
@@ -206,15 +218,17 @@ p {
     .circle2,
     .circle3 {
         position: relative;
-        left: 22px;
         border: 5px solid #fcfcfc;
         border: 3px solid black;
         width: 250px;
         height: 250px;
+        justify-self: center;
     }
 
     .circle2 {
-       top: 5px;
+       grid-area: circle2;
+       margin-top: 10px;
+       
     }
 
 
