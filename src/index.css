@@ -135,24 +135,27 @@ p {
         width: 900px;
         height: 400px;
         display: grid;
-        grid-template-columns: repeat(3, 33%);
+        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 350px 50px;
         grid-template-areas: "left-info mid-info right-info"
             "city-info city-info city-info"
     }
 
     #left-info {
-        grid-area: left-info
+        grid-area: left-info;
+        display: grid;
+        grid-template-rows: 50px 300px;
+        grid-template-areas: "empty""circle1"
     }
 
     #mid-info {
         grid-area: mid-info;
         display: grid;
         grid-template-rows: 300px 50px;
-        grid-template-areas: "circle2" "precip"
+        grid-template-areas: "circle2""precip"
     }
 
-    #mid-info > p {
+    #mid-info>p {
         grid-area: precip;
         text-align: center;
     }
@@ -160,11 +163,15 @@ p {
     #right-info {
         grid-area: right-info;
         display: grid;
+        grid-template-rows: 50px 300px;
+        grid-template-areas: "empty""circle3"
 
     }
 
     .cityInfo {
-        grid-area: city-info
+        grid-area: city-info;
+        position: relative;
+        top: -25px;
     }
 
     h1 {
@@ -175,44 +182,15 @@ p {
     #button {
         position: relative;
         height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    #temp {
+    #precip {
         position: relative;
-        font-size: 65px;
+        top: -20px;
     }
-
-    #temp-degree {}
-
-    #feelsLike {
-        position: relative;
-
-    }
-
-    #condition {}
-
-
-    #wind{
-        font-size: 20px;
-    }
-
-    #wind_speed {
-        font-size: 65px;
-    }
-
-    #wind_unit {
-        font-size: 20px;
-    }
-
-    #gust_speed {}
-
-    #wind_direction {}
-
-    #dewpoint {}
-
-    #humidity {}
-
-    #precip {}
 
     .circle1,
     .circle2,
@@ -225,12 +203,93 @@ p {
         justify-self: center;
     }
 
-    .circle2 {
-       grid-area: circle2;
-       margin-top: 10px;
-       
+    .circle1 {
+        grid-area: circle1;
+        display: grid;
+        grid-template-rows: 130px 126px;
+        grid-template-columns: 128px 128px;
+        grid-template-areas: "icon icon"
+            "condition condition";
     }
 
+    #icon {
+        grid-area: icon;
+        justify-self: center;
+        position: relative;
+        top: 22px;
+    }
+
+    #condition {
+        grid-area: condition;
+        justify-self: center;
+    }
+
+    .circle2 {
+        grid-area: circle2;
+        margin-top: 10px;
+        display: grid;
+        grid-template-rows: 130px 126px;
+        grid-template-columns: 128px 128px;
+        grid-template-areas: "temp temp"
+            "feelsLike feelsLike"
+    }
+
+    #temp {
+        font-size: 65px;
+        grid-area: temp;
+        justify-self: center;
+    }
+
+    #feelsLike {
+        grid-area: feelsLike;
+        justify-self: center;
+    }
+
+    .circle3 {
+        grid-area: circle3;
+        display: grid;
+        grid-template-rows: 30px 120px 53px 53px;
+        grid-template-columns: 128px 128px;
+        grid-template-areas: "wind wind"
+            "windmeasurement windmeasurement"
+            "direction direction"
+            "gust gust"
+    }
+
+    #wind {
+        font-size: 20px;
+        grid-area: wind;
+        justify-self: center;
+        position: relative;
+        top: -5px;
+    }
+
+    #wind_measurements {
+        grid-area: windmeasurement;
+        justify-self: center;
+    }
+
+    #wind_speed {
+        font-size: 65px;
+    }
+
+    #wind_unit {
+        font-size: 20px;
+    }
+
+    #gust {
+        grid-area: gust;
+        position: relative;
+        top: -20px;
+        justify-self: center;
+    }
+
+    #direction {
+        grid-area: direction;
+        justify-self: center;
+        position: relative;
+        top: -20px;
+    }
 
 
 }

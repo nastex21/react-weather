@@ -42,8 +42,9 @@ export default class Condition extends Component {
         var copyBody = document.querySelector("#copy-body");
 
         //Check for conditions: Overcast
+        console.log(overcast_condition);
+        console.log(clear_condition);
         if(overcast_condition !== null){
-            if (cloudy_condition !== null) {
                 if (n >= 6 && n <= 18) {
                     background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/cloudscape-384672_1920_jngvmo.jpg)";
                     copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/cloudscape-384672_1920_jngvmo.jpg)";
@@ -56,7 +57,7 @@ export default class Condition extends Component {
                     this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487196/Icons/cloudy.png"});
                 }
             }
-        }
+        
 
         //cloudy conditions
         if (cloudy_condition !== null) {
