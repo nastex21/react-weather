@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { guidGenerator } from "./generateuniqkey";
 
 export default class WindInfo extends Component {
     constructor(props) {
@@ -42,13 +43,13 @@ export default class WindInfo extends Component {
     }
 
     render(){
-    
+
         return(
                 <>
-                    <p id="wind"><span id="wind_label">Wind</span></p>
-                    <p id="wind_measurements"><span id="wind_speed"> {Math.round(this.state.speed)} <span id="wind_unit">{this.state.unit}</span></span></p>
-                    <p id="direction"><span id="wind_direction">{this.state.direction}</span></p>
-                    <p id="gust"><span id="gust_speed">Gust: {Math.round(this.state.gust)} <span id="gust-unit">{this.state.unit}</span></span></p>
+                    <p id="wind" key={guidGenerator()}><span id="wind_label" key={guidGenerator()}>Wind</span></p>
+                    <p id="wind_measurements" key={guidGenerator()}><span id="wind_speed" key={guidGenerator()}> {Math.round(this.state.speed)}</span> <span id="wind_unit" key={guidGenerator()}>{this.state.unit}</span></p>
+                    <p id="direction" key={guidGenerator()}><span id="wind_direction" key={guidGenerator()}>{this.state.direction}</span></p>
+                    <p id="gust" key={guidGenerator()}><span id="gust_speed" key={guidGenerator()}>Gust: {Math.round(this.state.gust)}</span> <span id="gust-unit" key={guidGenerator()}>{this.state.unit}</span></p>
                 </>
         )
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import City from "./City";
 import InfoBox from "./InfoBox";
+import { guidGenerator } from "./generateuniqkey";
 
 class App extends Component {
   constructor(props) {
@@ -56,16 +57,14 @@ class App extends Component {
     })
     )
   }
-  
 
   render() {
     let info = this.state.data.info;
     return (
       <>
         {info !== undefined ? this.additionalContent() : null}
-        <div id="button">        
-        <button onClick={this.imptoMetric}>{this.state.text}
-        </button>
+        <div key={guidGenerator()} id="button">        
+           <button onClick={this.imptoMetric}>{this.state.text}</button>
         </div>
       </>
       

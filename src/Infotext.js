@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Condition from "./ConditionImgs";
 import WindInfo from "./WindInfo";
+import { guidGenerator } from "./generateuniqkey";
 
 
 export default class Infotext extends Component {
@@ -51,18 +52,18 @@ export default class Infotext extends Component {
     render(){
         //generates virtual DOM elements
         return [
-            <div id="left-info">
-              <div className="circle1">
-                    <Condition data={this.props.data} />
-                    <p id="condition">{this.state.condition}</p>
+            <div key={guidGenerator()} id="left-info">
+              <div key={guidGenerator()} className="circle1">
+                    <Condition key={guidGenerator()} data={this.props.data} />
+                    <p key={guidGenerator()} id="condition">{this.state.condition}</p>
                 </div>
             </div>,
-            <div id="mid-info">
-              <div className="circle2">
-                <p id="temp">{this.state.temp}<span id="temp-degree" className='degree'>{String.fromCharCode(176)}</span><span id="feh-unit">{this.state.unit}</span></p>
-                <p id="feelsLike">Feels Like: {this.state.feelsLike} <span id="feelsLike-degree" className="degree">{String.fromCharCode(176)}</span><span id="realFeelUnit">{this.state.unit}</span></p>
+            <div key={guidGenerator()} id="mid-info">
+              <div key={guidGenerator()} className="circle2">
+                <p key={guidGenerator()} id="temp">{this.state.temp}<span key={guidGenerator()} id="temp-degree" className='degree'>{String.fromCharCode(176)}</span><span key={guidGenerator()} id="feh-unit">{this.state.unit}</span></p>
+                <p key={guidGenerator()} id="feelsLike">Feels Like: {this.state.feelsLike} <span key={guidGenerator()} id="feelsLike-degree" className="degree">{String.fromCharCode(176)}</span><span key={guidGenerator()} id="realFeelUnit">{this.state.unit}</span></p>
                 </div>
-                <p><span id="precip">Precipitation Today: {this.state.precip}</span></p>
+                <p key={guidGenerator()}><span key={guidGenerator()} id="precip">Precipitation Today: {this.state.precip}</span></p>
             </div>,
            <div id="right-info">           
                 <div className="circle3">
