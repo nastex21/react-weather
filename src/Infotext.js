@@ -65,9 +65,9 @@ export default class Infotext extends Component {
                 </div>
                 <p key={guidGenerator()}><span key={guidGenerator()} id="precip">Precipitation Today: {this.state.precip}</span></p>
             </div>,
-           <div id="right-info">           
-                <div className="circle3">
-                    <WindInfo data={this.props.data} metric={this.props.metricState} />
+           <div key="right-column" id="right-info">           
+                <div key="circle3" className="circle3">
+                    <WindInfo key="WindInfo" data={this.props.data} metric={this.props.metricState} />
                 </div>
             </div>
         ]

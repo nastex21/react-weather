@@ -43,9 +43,9 @@ class App extends Component {
   additionalContent() {
     let info = this.state.data.info;
     return (
-      <div id="inside-contents"> 
-       <City name={info.current_observation.display_location.full} />
-       <InfoBox data_obv={info.current_observation} metricState={this.state.metric} />
+      <div key="inside_components" id="inside-contents"> 
+       <City key={guidGenerator()} name={info.current_observation.display_location.full} />
+       <InfoBox key="infoBoxDiv" data_obv={info.current_observation} metricState={this.state.metric} />
       </div>
     )
   }
@@ -64,7 +64,7 @@ class App extends Component {
       <>
         {info !== undefined ? this.additionalContent() : null}
         <div key={guidGenerator()} id="button">        
-           <button onClick={this.imptoMetric}>{this.state.text}</button>
+           <button key={guidGenerator()} onClick={this.imptoMetric}>{this.state.text}</button>
         </div>
       </>
       
