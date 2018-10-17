@@ -48,15 +48,15 @@ export default class Condition extends Component {
         //Check for conditions: Overcast
         if(overcast_condition !== null){
                 if (n >= 6 && n <= 18) { // if n is after 6 AM and before 6 PM
-                    background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483751/cloudscape-384672_1920_jngvmo.jpg)";
-                    copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483751/cloudscape-384672_1920_jngvmo.jpg)";
+                    background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/Weather/cloudscape-384672_1920_jngvmo.jpg)";
+                    copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/Weather/cloudscape-384672_1920_jngvmo.jpg)";
     
-                    this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487196/Icons/cloudy.png"});
+                    this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487196/Icons/cloudy.png"});
                 } else if (n < 6 || n > 18) { //if n is before 6 AM and after 6 PM
-                    background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483751/moon-3059861_1920_gmz0fh.jpg)";
-                    copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483751/moon-3059861_1920_gmz0fh.jpg)";
+                    background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/Weather/moon-3059861_1920_gmz0fh.jpg)";
+                    copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/Weather/moon-3059861_1920_gmz0fh.jpg)";
     
-                    this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487196/Icons/cloudy.png"});
+                    this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487196/Icons/cloudy.png"});
                 }
             }
         
@@ -64,127 +64,127 @@ export default class Condition extends Component {
         //cloudy conditions
         if (cloudy_condition !== null) {
             if (n >= 6 && n <= 18) {
-                background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483751/cloudscape-384672_1920_jngvmo.jpg)";
-                copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483751/cloudscape-384672_1920_jngvmo.jpg)";
+                background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/Weather/cloudscape-384672_1920_jngvmo.jpg)";
+                copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/Weather/cloudscape-384672_1920_jngvmo.jpg)";
 
-                this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487196/Icons/cloudysun.png" });
+                this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487196/Icons/cloudysun.png" });
          
             } else if (n < 6 || n > 18) {
-                background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483751/moon-3059861_1920_gmz0fh.jpg)";
-                copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483751/moon-3059861_1920_gmz0fh.jpg)";
+                background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/Weather/moon-3059861_1920_gmz0fh.jpg)";
+                copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/Weather/moon-3059861_1920_gmz0fh.jpg)";
 
 
-                this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487196/Icons/cloudymoon.png"});
+                this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487196/Icons/cloudymoon.png"});
 
             }
         }
 
         //RAINY CONDITIONS
         if (rainy_condition !== null) {
-            background.style.backgroundImage ="url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468647513/Weather/water-815271.jpg)"; 
-            copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468647513/Weather/water-815271.jpg)";
+            background.style.backgroundImage ="url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468647513/Weather/water-815271.jpg)"; 
+            copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468647513/Weather/water-815271.jpg)";
                 
             
-            this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487196/Icons/rainymoderate.png" });
+            this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487196/Icons/rainymoderate.png" });
         }
 
         //FOGGY CONDITIONS
         if (foggy_condition !== null) {
-            background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483751/fog-1209447_1920_gsj7ei.jpg)";
-            copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483751/fog-1209447_1920_gsj7ei.jpg)";
+            background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/Weather/fog-1209447_1920_gsj7ei.jpg)";
+            copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483751/Weather/fog-1209447_1920_gsj7ei.jpg)";
 
-            this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487196/Icons/cloudy.png"})
+            this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487196/Icons/cloudy.png"})
         }
 
         //SNOWY CONDITIONS
         if (snowy_condition !== null) {
-            background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646017/Weather/snow-on-berries-1379880.jpg)"; 
-            copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646017/Weather/snow-on-berries-1379880.jpg)"; 
+            background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646017/Weather/snow-on-berries-1379880.jpg)"; 
+            copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646017/Weather/snow-on-berries-1379880.jpg)"; 
 
-            this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487198/Icons/snow.png"});
+            this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487198/Icons/snow.png"});
         }
 
         //ICY CONDITIONS
         if (icy_condition !== null) {
-            background.style.backgroundImage ="url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468647757/Weather/icy.jpg)"; 
-            copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468647757/Weather/icy.jpg)"; 
+            background.style.backgroundImage ="url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468647757/Weather/icy.jpg)"; 
+            copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468647757/Weather/icy.jpg)"; 
 
-            this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487196/Icons/hail.png"});
+            this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487196/Icons/hail.png"});
         }
 
         //THUNDERSTORMS CONDITION
         if (thunderstorm_condition !== null) {
-            background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646049/Weather/thunder.jpg)"; 
-            copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646049/Weather/thunder.jpg)";
+            background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646049/Weather/thunder.jpg)"; 
+            copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646049/Weather/thunder.jpg)";
 
-            this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487199/Icons/thunderclouds.png"});
+            this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487199/Icons/thunderclouds.png"});
         }
 
         //HAIL CONDITIONS
           if (hail_condition !== null) {
-            background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483753/hailstone-1614239_1920_iqd17w.jpg)";
-            copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483753/hailstone-1614239_1920_iqd17w.jpg)";
+            background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483753/Weather/hailstone-1614239_1920_iqd17w.jpg)";
+            copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483753/Weather/hailstone-1614239_1920_iqd17w.jpg)";
                         
-            this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487196/Icons/hail.png"});
+            this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487196/Icons/hail.png"});
                     }
 
         
         //CLEAR CONDITIONS
             if (clear_condition !== null) {
                 if (n >= 5 && n <= 7) {
-                    background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483754/sunrise_lyhs5e.jpg)"; 
-                    copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483754/sunrise_lyhs5e.jpg)"; 
+                    background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483754/Weather/sunrise_lyhs5e.jpg)"; 
+                    copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483754/Weather/sunrise_lyhs5e.jpg)"; 
 
-                    this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487198/Icons/sunny.png"});
+                    this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487198/Icons/sunny.png"});
 
                 } else if (n > 7 && n < 17) {
-                    background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646022/Weather/sun.jpg)"; 
-                    copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646022/Weather/sun.jpg)"; 
+                    background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646022/Weather/sun.jpg)"; 
+                    copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646022/Weather/sun.jpg)"; 
 
-                    this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487198/Icons/sunny.png"});
+                    this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487198/Icons/sunny.png"});
 
                 } else if (n >= 17 && n <= 19) {
-                    background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483752/sunset-472981_1920_cfqh34.jpg)"; 
-                    copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1539483752/sunset-472981_1920_cfqh34.jpg)"; 
+                    background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483752/Weather/sunset-472981_1920_cfqh34.jpg)"; 
+                    copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1539483752/Weather/sunset-472981_1920_cfqh34.jpg)"; 
 
-                    this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487199/Icons/sunset.png"});
+                    this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487199/Icons/sunset.png"});
                 } else if (n > 19 || n < 6) {
-                    background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646020/Weather/night.jpg)"; 
-                    copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646020/Weather/night.jpg)";
+                    background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646020/Weather/night.jpg)"; 
+                    copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646020/Weather/night.jpg)";
 
-                    this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487196/Icons/clearmoon.png"});
+                    this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487196/Icons/clearmoon.png"});
                 }
             }
 
         //if condition is an empty string
             if (condition === "") {
                 if (n >= 5 && n <= 7) {
-                        background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646022/Weather/sunrise-182302.jpg)"; 
-                        copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646022/Weather/sunrise-182302.jpg)"; 
+                        background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646022/Weather/sunrise-182302.jpg)"; 
+                        copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646022/Weather/sunrise-182302.jpg)"; 
 
-                        this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487198/Icons/sunny.png"});
+                        this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487198/Icons/sunny.png"});
 
 
                 } else if (n > 7 && n < 17) {
                     
-                        background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646022/Weather/sun.jpg)"; 
-                        copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646022/Weather/sun.jpg)"; 
+                        background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646022/Weather/sun.jpg)"; 
+                        copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646022/Weather/sun.jpg)"; 
 
-                        this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487198/Icons/sunny.png"});
+                        this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487198/Icons/sunny.png"});
 
                 } else if (n >= 17 && n <= 19) {
                     
-                        background.style.backgroundImage ="url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646049/Weather/sunset-288531.jpg)"; 
-                        copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646049/Weather/sunset-288531.jpg)"; 
+                        background.style.backgroundImage ="url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646049/Weather/sunset-288531.jpg)"; 
+                        copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646049/Weather/sunset-288531.jpg)"; 
 
-                        this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487199/Icons/sunset.png"});
+                        this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487199/Icons/sunset.png"});
 
                 } else if (n > 19 || n < 6) {
                     
-                        background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646020/Weather/night.jpg)"; 
-                        copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/Weather/q_auto/v1468646020/Weather/night.jpg)"; 
+                        background.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646020/Weather/night.jpg)"; 
+                        copyBody.style.backgroundImage = "url(https://res.cloudinary.com/nasax2000/image/upload/q_auto/v1468646020/Weather/night.jpg)"; 
 
-                        this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/Icons/v1539487196/Icons/clearmoon.png"});
+                        this.setState({src: "https://res.cloudinary.com/nasax2000/image/upload/v1539487196/Icons/clearmoon.png"});
 
                 }
             }
